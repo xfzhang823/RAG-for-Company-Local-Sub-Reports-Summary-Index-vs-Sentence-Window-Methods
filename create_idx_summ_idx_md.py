@@ -1,10 +1,23 @@
-# About the File:
-# This app reads selected Deloitte's country level transparent report docs (pdf format) into a
-# document object.
-# Indexes it into a vectorstore object, including
-# chunking the documents, using openai to embedd and create hiearchical summary metadata.
-# Then saves the index to disk.
+"""
+File: create_idx_summ_idx_md.py
+Author: Xiao-Fei Zhang
+Date: March 22, 2024
 
+Description:
+    This script is the 1st part of the Summary Index RAG technique.
+    Specifically, it reads multiple PDF documents (selected Deloitte's country level transparent report) into a document object.
+    Indexes it into a vectorstore object: 
+    - chunking the documents, 
+    - using openai to embedd the chunks, and
+    - create hiearchical summary metadata.
+    Saves the index to disk.functions to process and analyze customer feedback data.
+
+Usage:
+    The script shoould be executed directly.
+
+Dependencies:
+    Requires multiple functions from llamaindex's library
+"""
 
 # Import libs
 from llama_index.core import Document
@@ -61,7 +74,7 @@ doc_summary_index = DocumentSummaryIndex.from_documents(
 )
 # this part take a long time
 """
-    Important Note:
+    Note:
     The response_synthesizer should be a process AFTER embedding/indexing. 
     But here it is not used to generate responses to queries.
     The response_synthesizer is used in the indexing/embedding stage to generate summaries for the chunks.
