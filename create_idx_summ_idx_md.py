@@ -35,7 +35,7 @@ from llama_index.core.node_parser import SentenceSplitter
 
 # Read documents
 data_directory_path = (
-    r"C:\github\chatgpt\rag deloitte transparency reports\data\raw data"
+    r"\data\raw data"     # enter the location of your data file folder here
 )
 reader = SimpleDirectoryReader(input_dir=data_directory_path, filename_as_id=True)
 doc_store = reader.load_data()
@@ -84,5 +84,5 @@ doc_summary_index = DocumentSummaryIndex.from_documents(
 """
 
 # Store index using llama-index's own storage method
-persist_path = r"C:\github\chatgpt\rag deloitte transparency reports\index"
+persist_path = r"\index"     # input your directory folder location here
 doc_summary_index.storage_context.persist(persist_path)
