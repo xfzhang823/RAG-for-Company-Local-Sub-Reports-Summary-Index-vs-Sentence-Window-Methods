@@ -47,8 +47,8 @@ Settings.llm = chatgpt
 
 # Load index
 # Path of the project directory
-directory_path = r"C:\github\chatgpt\rag deloitte transparency reports"  # directory where index files are located
-index_directory = Path(directory_path) / "index_summ_idx_md"
+directory_path = r".\project directory"  # enter your working/project directory path here
+index_directory = Path(directory_path) / "index_summ_idx_md" # enter the name of the directory where you saved the index to 
 
 # Load index from disk
 storage_context = StorageContext.from_defaults(persist_dir=index_directory)
