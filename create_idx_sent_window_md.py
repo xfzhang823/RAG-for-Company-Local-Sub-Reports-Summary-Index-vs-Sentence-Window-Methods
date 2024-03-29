@@ -7,7 +7,8 @@ Description:
     This script is the 1st part of the Sentence Window RAG method.
     Specifically, it reads multiple PDF documents (selected Deloitte's country level transparent report) into a document object.
     Indexes it into a vectorstore object: 
-    - chunking the documents using the 
+    - chunking the documents using the custom parser for sentence window to "small" chunks for searching 
+    and "large" chunks to generate prompts for the LLM
     - using openai to embedd the chunks, and
     - create metadata.
     Saves the index to disk.functions to process and analyze customer feedback data.
@@ -72,9 +73,8 @@ Settings.text_splitter = text_splitter
 
 # Load original documents
 data_directory_path = (
-    r"C:\github\chatgpt\rag deloitte transparency reports\data\raw data"
-)
-# enter your directory path of the document data to be read
+    r"\raw data"
+) # enter your directory path of the document data to be read
 documents = SimpleDirectoryReader(data_directory_path, filename_as_id=True).load_data()
 # SimpleDirectoryReader method lets you read an entire directory or an individual files.
 # You can use "input_files =" param to read just files.
@@ -107,11 +107,12 @@ print("document parsed.\n")
 # - sent_index is w/t "windows"
 
 # file paths for index storage
-persist_path_base_index = r"C:\github\chatgpt\rag deloitte transparency reports\index_sent_window_md\base_index"
-persist_path_sent_index = r"C:\github\chatgpt\rag deloitte transparency reports\index_sent_window_md\sentence_index"
+persist_path_base_index = r".\base_index" 
+persist_path_sent_index = r".\sentence_index"
+# enter your designated folders to save index files;
 # if the immediate folders are not created, this method will create them for you;
 # but root directory path must be correct.
-# Indexing takes time and has token charges,
+# Indexing takes time and has LLM token charges,
 # you need to make sure that code for persisting/saving index files to disk are correct
 # to not waste time & money.
 
