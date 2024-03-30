@@ -37,8 +37,10 @@ openai.api_key = os.environ[
 llm = OpenAI(model="gpt-3.5-turbo", temperature=0.1)
 embed_model = OpenAIEmbedding(
     model_name="text-embedding-ada-002", max_length=512
-)  # I think openai do not allow you to use gpt-3.5 for embedding anymore;
-# therefore, you have to use its text embedding model/engine
+) 
+# used openai's text embedding machine instead of chatgpt-3.5 
+# b/c the sent window method has a lot more tokens to embed. 
+# text-embedding model is a lot cheaper than gpt.
 
 Settings.llm = llm
 Settings.embed_model = embed_model
@@ -46,7 +48,7 @@ Settings.embed_model = embed_model
 
 # Load index from disk
 # Path of the project directory
-directory_path = r"C:\github\chatgpt\rag deloitte transparency reports"  # working directory of your project
+directory_path = r".\rag deloitte transparency reports"  # input you working directory of project folder
 sent_index_directory = (
     Path(directory_path) / "index_sent_window_md/sentence_index"
 )  # sub-folers where you keep the sentence index
