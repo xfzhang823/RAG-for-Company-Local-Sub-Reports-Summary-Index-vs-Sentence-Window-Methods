@@ -95,7 +95,7 @@ nodes = node_parser.get_nodes_from_documents(documents)
 # which will be used to generate the prompt into the LLM later
 # It will also create 2 attributes in the metadata: window, original_text
 
-# Etract nodes w/t just the standard sentence parser
+# Extract nodes w/t just the standard sentence parser
 base_nodes = text_splitter.get_nodes_from_documents(documents)
 
 print("document parsed.\n")
