@@ -21,6 +21,6 @@ The repository includes four application files for the RAG implementation and an
 - The code is structured to allow independent operation of indexing and querying, ensuring flexibility for future modifications or integration into larger projects.
 
 ## Getting Started
-To use these scripts, clone the repository and install any necessary dependencies as outlined in the provided `requirements.txt` file. Ensure you have the appropriate environment set up for running Python scripts.
+To use these scripts, clone the repository and install any necessary dependencies. Ensure you have the appropriate environment set up for running Python scripts.
 
 For a step-by-step guide on executing these scripts and a more detailed explanation of each file's role within the RAG framework, refer to the documentation provided within each script and the main article linked above.
