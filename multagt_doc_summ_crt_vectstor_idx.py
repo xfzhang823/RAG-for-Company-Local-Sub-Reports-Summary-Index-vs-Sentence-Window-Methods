@@ -4,7 +4,7 @@ Author: Xiao-Fei Zhang
 Date: Apr 17, 2024
 
 Description:
-    This module is the 2nd part of the multi-agent summarization RAG model, which sets up a multi-document
+    This module is the 1st part of the multi-agent summarization RAG model, which sets up a multi-document
     agent system. It creates a VectorStore index by loading documents into a nested dictionary, inserting 
     metadata (country), and persisting each to disk using the VectorStoreIndex class.
 
@@ -39,8 +39,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Data directory path
 data_directory_path = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\data\raw data"
-)
+    r"...\raw data"
+) # input your data file directory path
 
 # File name to country mapping
 country_to_file_mapping = {
@@ -81,8 +81,8 @@ Settings.embed_model = OpenAIEmbedding(
 
 # Directory to persist index - vector store indices (not summarized)
 persist_directory = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\index_multi_agent_vectorstore"
-)
+    r"...\index_multi_agent_vectorstore"
+) # input directory path of where to persist/save index files
 
 # Create and persist multiple VectorStore indices (one for each document/country)
 for key, docs in all_docs.items():
