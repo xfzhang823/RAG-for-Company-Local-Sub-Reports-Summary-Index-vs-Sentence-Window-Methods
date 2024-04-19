@@ -40,8 +40,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Data directory path
 data_directory_path = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\data\raw data"
-)
+    r"C...\raw data")     # enter data file folder
 
 # Mapping dict: keys => country, values => file names with PDF extension
 country_to_file_mapping = {
@@ -85,8 +84,8 @@ Settings.embed_model = OpenAIEmbedding(
 
 # Directory to persist the summarization index
 persist_directory = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\index_multi_agent_summ"
-)
+    r"...\index_multi_agent_summ"
+) # enter folder where to persist/save indices to
 
 # Create and persist a DocumentSummaryIndex for each set of documents
 for country, docs in all_docs.items():
