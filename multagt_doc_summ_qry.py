@@ -4,7 +4,7 @@ Author: Xiao-Fei Zhang
 Date: Apr 17, 2024
 
 Description:
-    This module is a multi-agent RAG model.
+    This module is the 3rd part of the multi-agent RAG model - the retrival/query process.
 
     It handles the setup and management of query engines for information retrieval from indices stored 
     in designated directories.
@@ -15,8 +15,8 @@ Description:
     The script is divided into the following parts:
     1. Initialization of directory paths and loading of environment configurations.
     2. Definition of utility functions to load indices from the storage and initialize query tools.
-    3. Creation of query engines, including sub-question engines.
-    4. Integration with OpenAI's LLMs for generating responses to user queries.
+    3. Creation of query engines and tools, including sub-question engine/tool.
+    4. Integration with OpenAI's LLMs for generating responses to user queries. 
 
     The system is designed to be modular, allowing for easy adaptation and expansion.
 
@@ -69,11 +69,11 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Directories for stored indices
 vector_store_path = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\index_multi_agent_vectorstore"
-)
+    r"...\index_multi_agent_vectorstore"
+)    # input directory paths where indices are stored in
 document_summary_path = Path(
-    r"C:\github\chatgpt\rag deloitte transparency reports\index_multi_agent_summ"
-)
+    r"...\index_multi_agent_summ"
+)    # input directory paths where indices are stored in
 
 
 # Function to load indices from a given path
