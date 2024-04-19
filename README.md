@@ -9,12 +9,19 @@ The code examples here are primarily based on the techniques discussed in the [L
 - [Detailed Code Walkthrough](https://www.linkedin.com/pulse/comparison-document-summary-index-sentence-window-methods-zhang-bplae/): For explanations of each lines of code
 
 ## Repository Contents
-The repository includes four application files for the RAG implementation and an optional index info viewer:
+
+Basic Modules
+This part of the repository includes four application files for the RAG implementation and an optional index info viewer:
 1. `create_idx_summ_idx_md.py`: Implements the Document Summary Index method for building the retrieval knowledgebase.
 2. `rtrv_synth_qry_summ_idx_md.py`: Handles retrieval and querying using the Document Summary Index method.
 3. `create_idx_sent_window_md.py`: Applies the Node Sentence Window method for constructing the retrieval knowledgebase.
 4. `query_sent_window_md.py`: Manages retrieval and querying for the Node Sentence Window method.
 5. `get_index_info.py`: A utility class to examine vectorstore index summaries.
+
+Multi-Agent Add-on
+1.	multagt_doc_summ_crt_summ_idx.py: Applies the multi-agent approach to build the retrieval knowledgebase by creating a document summary index for each document.
+2.	multagt_doc_summ_crt_vectstor_idx.py: Applies the multi-agent approach to build the retrieval knowledgebase by creating a standard vector store index for each document.
+3.	multagt_doc_summ_qry.py: This module loads indices from disk and performs multi-agent retrieval & query.
 
 ## Implementation Notes
 - Indexing processes, which take between 10 to 20 minutes due to their complexity and associated token costs, are designed to persist data to disk first. This approach facilitates separate execution for the retrieval and query operations, optimizing resource utilization and cost-efficiency.
