@@ -24,7 +24,7 @@ Multi-Agent Add-on
 3.	multagt_doc_summ_qry.py: This module loads indices from disk and performs multi-agent retrieval & query.
 
 ## Implementation Notes
-- Indexing processes, which take between 10 to 20 minutes due to their complexity and associated token costs, are designed to persist data to disk first. This approach facilitates separate execution for the retrieval and query operations, optimizing resource utilization and cost-efficiency.
+- Indexing processes, which take between 10 to 30 minutes due to their complexity and associated token costs, are designed to persist data to disk first. This approach facilitates separate execution for the retrieval and query operations, optimizing resource utilization and cost-efficiency.
 - The code is structured to allow independent operation of indexing and querying, ensuring flexibility for future modifications or integration into larger projects.
 
 ## Getting Started
